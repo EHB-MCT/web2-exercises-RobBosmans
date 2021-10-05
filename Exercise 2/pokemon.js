@@ -27,8 +27,20 @@ window.onload = function(){
 
     setTimeout(buildList, 3000);
     
-    
     function buildList(){
+        for(let i = 0; i < 151; i++){
+            let html = `
+            <img src="" alt="pokemonImage">
+            <p>${pokemon.name}</p>
+            <p>type</p>
+            <button>Add</button>
+            `
+            document.getElementById('pokemon').innerHTML = html;
+        }
+    }
+    buildList();
+    
+    /* function buildList(){
         let html = `
         <img src="" alt="pokemonImage">
         <p>${pokemon.name}</p>
@@ -37,7 +49,7 @@ window.onload = function(){
         `
         document.getElementById('pokemon').innerHTML = html;
     }
-    buildList();
+    buildList(); */
 
 }
 
