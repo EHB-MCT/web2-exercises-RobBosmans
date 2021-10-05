@@ -1,3 +1,4 @@
+import team from './team.js';
 
 let list = [];
 let pokemon = [];
@@ -52,4 +53,6 @@ window.onload = function(){
     buildList(); */
 
 }
+
+let 
 

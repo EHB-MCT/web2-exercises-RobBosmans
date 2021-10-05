@@ -5,7 +5,7 @@ class Team {
         this.roster = [];
     }
     describe(){
-        
+        return `Team ${this.teamName} with trainer ${this.trainer} has the following pokemon: ${[...this.roster]}`;
     }
 }
 
