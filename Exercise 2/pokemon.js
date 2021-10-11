@@ -12,13 +12,13 @@ function getData(){
             
             //loop over list to get each pokemon
             for(let element of list) {
-                fetch(element.url).then(response =>{
+                fetch(element.url).then(response => {
                     return response.json();
                 }).then(data => {
-                    pokemon.push(data)
-                    console.log(pokemon);
+                    pokemon.push(data);
+                    //console.log(pokemon);
                 })
-            };
+            }
     })
 };
 
@@ -29,30 +29,24 @@ window.onload = function(){
     setTimeout(buildList, 3000);
     
     function buildList(){
-        for(let i = 0; i < 151; i++){
-            let html = `
-            <img src="" alt="pokemonImage">
-            <p>${pokemon.name}</p>
-            <p>type</p>
-            <button>Add</button>
+        let html = '';
+        //order list
+        pokemon.sort(function(a,b){
+            return a.id - b.id;
+        });
+
+        for(let p of pokemon){
+            html += `
+            <div id="item">
+                <div>
+                    <img src="${p.sprites.front_default}" alt="pokemonImage">
+                    <h4>${p.name}</h4>
+                    <a href="#" id="${p.id}"><p>ADD</p></a>
+                </div>
+            </div>
             `
-            document.getElementById('pokemon').innerHTML = html;
         }
-    }
-    buildList();
-    
-    /* function buildList(){
-        let html = `
-        <img src="" alt="pokemonImage">
-        <p>${pokemon.name}</p>
-        <p>${pokemon.types}</p>
-        <button>Add</button>
-        `
-        document.getElementById('pokemon').innerHTML = html;
-    }
-    buildList(); */
-
-}
-
-let 
+        document.getElementById('list').innerHTML = html;
+    };
+};
 
