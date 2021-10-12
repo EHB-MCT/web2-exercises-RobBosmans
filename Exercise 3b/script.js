@@ -1,13 +1,37 @@
+let baseurl = "http://www.omdbapi.com/?apikey=78ba43d9";
+
 window.onload = function(){
-    async function getData(){
-        let response = await fetch('http://www.omdbapi.com/?t=parasite&apikey=78ba43d9');
-        let data = await response.json();
-        return data;
-    };
     
-    getData()
-    .then(data => console.log(data))
+    // input
+    inputData();
+    
+    // url build
+    //let url = baseurl + `t=${inputTitle}`;
+    // getData(url).then(result => {
+    //     console.log(result)
+    // });
 };
+
+async function getData(e){
+    let response = await fetch(baseurl);
+    return await response.json();
+};
+
+function inputData(e){
+
+    document.getElementById("searchform").addEventListener("submit", event => {
+        event.preventDefault();
+        let inputTitle = document.getElementById("inputTitle").value;
+        console.log(inputTitle);
+
+        let url = baseurl + `s=${inputTitle}`;
+
+        getData(url).then(result => {
+            console.log(result)
+        });
+    })
+
+}
 
 
 
