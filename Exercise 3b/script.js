@@ -15,6 +15,7 @@ window.onload = function(){
 async function getData(e){
     let response = await fetch(baseurl);
     return await response.json();
+    console.log(response);
 };
 
 function inputData(e){
