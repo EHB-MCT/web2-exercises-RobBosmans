@@ -20,7 +20,6 @@ async function getData(e){
 
 function getNewAccessToken(e){
     //Access Token expires so needs to be refreched by using the refresh token. 
-
     //code from postman
     var myHeaders = new Headers();
     myHeaders.append("Cookie", "_strava4_session=mp0pj628d3j9937dl8jpvfh0lrnbg0b1");
