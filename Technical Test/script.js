@@ -14,7 +14,7 @@ window.onload = function(){
 
 async function getData(e){
     //fetch routes
-    let response = await fetch("https://www.strava.com/api/v3/athletes/15412454/routes?access_token=0a60016b3765a2a4a9554f0d52d92e9cd515506c");
+    let response = await fetch("https://www.strava.com/api/v3/athletes/15412454/routes?access_token=ba6ba2a5d10c2dbe52889a09a5e9c4fd46a02344");
     return await response.json();
 };
 
